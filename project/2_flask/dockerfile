@@ -1,0 +1,13 @@
+FROM python:3.8-slim
+
+#set working directory in the image
+WORKDIR /app
+
+#copy the current directory content in /app in the image
+COPY . /app
+
+#install requirements
+RUN pip install --no-cache-dir -r requirements.txt
+
+#run the application
+CMD ["python","app.py"]
